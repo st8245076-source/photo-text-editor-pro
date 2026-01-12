@@ -3,14 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Text Editor Pro - Behind Text Effect</title>
-    <style>*{margin:0;padding:0;box-sizing:border-box}:root{--primary:#6366f1;--primary-dark:#4f46e5;--secondary:#8b5cf6;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--bg-dark:#0f172a;--bg-card:#1e293b;--bg-hover:#334155;--text-light:#f1f5f9;--text-gray:#cbd5e1;--border:#334155;--shadow:rgba(0,0,0,.3)}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);min-height:100vh;padding:20px;color:var(--text-light)}.container{max-width:1400px;margin:0 auto}.header{text-align:center;margin-bottom:30px}.header h1{font-size:2.5rem;margin-bottom:10px;text-shadow:2px 2px 4px rgba(0,0,0,.3)}.header p{font-size:1.1rem;opacity:.9}.main-grid{display:grid;grid-template-columns:350px 1fr;gap:20px;margin-bottom:20px}@media(max-width:1024px){.main-grid{grid-template-columns:1fr}}.sidebar{background:var(--bg-dark);border-radius:16px;padding:20px;box-shadow:0 8px 32px var(--shadow);max-height:calc(100vh - 200px);overflow-y:auto}.section{margin-bottom:25px}.section-title{font-size:1.1rem;font-weight:600;margin-bottom:12px;color:var(--text-light);display:flex;align-items:center;gap:8px}.upload-area{border:3px dashed var(--border);border-radius:12px;padding:40px 20px;text-align:center;cursor:pointer;transition:all .3s;background:var(--bg-card)}.upload-area:hover{border-color:var(--primary);background:var(--bg-hover)}.upload-area.dragover{border-color:var(--success);background:var(--bg-hover);transform:scale(1.02)}.upload-icon{font-size:3rem;margin-bottom:10px}.upload-text{font-size:1rem;color:var(--text-gray);margin-bottom:5px}.upload-hint{font-size:.85rem;color:var(--text-gray);opacity:.7}input[type="file"]{display:none}.text-input{width:100%;padding:12px;border:2px solid var(--border);border-radius:8px;background:var(--bg-card);color:var(--text-light);font-size:1rem;transition:all .3s;resize:vertical;min-height:80px;font-family:inherit}.text-input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(99,102,241,.2)}.control-group{margin-bottom:15px}.control-label{display:block;font-size:.9rem;margin-bottom:6px;color:var(--text-gray)}.slider-container{display:flex;align-items:center;gap:10px}.slider{flex:1;height:6px;border-radius:3px;background:var(--bg-hover);outline:none;-webkit-appearance:none}.slider::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:var(--primary);cursor:pointer;transition:all .3s}.slider::-webkit-slider-thumb:hover{background:var(--primary-dark);transform:scale(1.2)}.slider::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--primary);cursor:pointer;border:none}.slider-value{min-width:45px;text-align:right;font-weight:600;color:var(--primary)}.color-input{width:100%;height:45px;border:2px solid var(--border);border-radius:8px;cursor:pointer;background:var(--bg-card)}.color-input::-webkit-color-swatch-wrapper{padding:4px}.color-input::-webkit-color-swatch{border:none;border-radius:4px}.select-input{width:100%;padding:10px;border:2px solid var(--border);border-radius:8px;background:var(--bg-card);color:var(--text-light);font-size:.95rem;cursor:pointer}.select-input:focus{outline:none;border-color:var(--primary)}.styles-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.style-btn{padding:12px;border:2px solid var(--border);border-radius:8px;background:var(--bg-card);color:var(--text-light);cursor:pointer;transition:all .3s;font-size:.85rem;font-weight:500;text-align:center}.style-btn:hover{border-color:var(--primary);background:var(--bg-hover);transform:translateY(-2px)}.style-btn.active{border-color:var(--primary);background:var(--primary);color:white}.toggle-group{display:flex;gap:10px}.toggle-btn{flex:1;padding:10px;border:2px solid var(--border);border-radius:8px;background:var(--bg-card);color:var(--text-light);cursor:pointer;transition:all .3s;font-size:.9rem}.toggle-btn:hover{border-color:var(--primary);background:var(--bg-hover)}.toggle-btn.active{border-color:var(--primary);background:var(--primary);color:white}.canvas-container{background:var(--bg-dark);border-radius:16px;padding:20px;box-shadow:0 8px 32px var(--shadow);display:flex;flex-direction:column;align-items:center;min-height:600px}.canvas-wrapper{position:relative;max-width:100%;max-height:calc(100vh - 300px);overflow:auto;border-radius:8px;background:repeating-conic-gradient(#808080 0% 25%,transparent 0% 50%) 50%/20px 20px}#canvas{display:block;max-width:100%;height:auto;cursor:move;box-shadow:0 4px 20px rgba(0,0,0,.3)}.canvas-controls{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap;justify-content:center}.btn{padding:12px 24px;border:none;border-radius:8px;font-size:.95rem;font-weight:600;cursor:pointer;transition:all .3s;display:flex;align-items:center;gap:8px}.btn-primary{background:var(--primary);color:white}.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);box-shadow:0 4px 12px rgba(99,102,241,.4)}.btn-success{background:var(--success);color:white}.btn-success:hover{background:#059669;transform:translateY(-2px);box-shadow:0 4px 12px rgba(16,185,129,.4)}.btn-danger{background:var(--danger);color:white}.btn-danger:hover{background:#dc2626;transform:translateY(-2px)}.btn-secondary{background:var(--bg-card);color:var(--text-light);border:2px solid var(--border)}.btn-secondary:hover{background:var(--bg-hover);border-color:var(--primary)}.empty-state{text-align:center;padding:60px 20px;color:var(--text-gray)}.empty-state-icon{font-size:4rem;margin-bottom:20px;opacity:.5}.empty-state-text{font-size:1.2rem;margin-bottom:10px}.empty-state-hint{font-size:.9rem;opacity:.7}.position-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}.pos-btn{padding:8px;border:2px solid var(--border);border-radius:6px;background:var(--bg-card);color:var(--text-light);cursor:pointer;font-size:.8rem;transition:all .3s}.pos-btn:hover{border-color:var(--primary);background:var(--bg-hover)}.pos-btn.active{border-color:var(--primary);background:var(--primary);color:white}::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-track{background:var(--bg-card);border-radius:4px}::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}::-webkit-scrollbar-thumb:hover{background:var(--primary)}.feature-badge{display:inline-block;background:var(--success);color:white;padding:4px 8px;border-radius:4px;font-size:.75rem;font-weight:600;margin-left:8px}.info-box{background:var(--bg-card);border-left:4px solid var(--primary);padding:12px;border-radius:6px;margin-top:10px;font-size:.85rem;color:var(--text-gray)}</style>
+    <title>Behind Text Effect - Like Vietnam Photo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #f1f5f9;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(15, 23, 42, 0.8);
+            padding: 20px;
+            border-radius: 16px;
+        }
+        .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .header p { font-size: 1.1rem; opacity: 0.9; }
+        .main-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+        }
+        @media(max-width: 1024px) {
+            .main-grid { grid-template-columns: 1fr; }
+        }
+        .sidebar {
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: 16px;
+            padding: 20px;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+        .section { margin-bottom: 25px; }
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .upload-area {
+            border: 3px dashed #334155;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            background: rgba(30, 41, 59, 0.5);
+        }
+        .upload-area:hover {
+            border-color: #6366f1;
+            background: rgba(51, 65, 85, 0.5);
+        }
+        .upload-icon { font-size: 3rem; margin-bottom: 10px; }
+        input[type="file"] { display:none; }
+        .text-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #334155;
+            border-radius: 8px;
+            background: rgba(30, 41, 59, 0.5);
+            color: #f1f5f9;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 60px;
+        }
+        .control-group { margin-bottom: 15px; }
+        .control-label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: #cbd5e1;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .slider {
+            flex: 1;
+            height: 6px;
+            border-radius: 3px;
+            background: #334155;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #6366f1;
+            cursor: pointer;
+        }
+        .slider-value {
+            min-width: 50px;
+            text-align: right;
+            font-weight: 600;
+            color: #6366f1;
+        }
+        .canvas-container {
+            background: rgba(15, 23, 42, 0.95);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 600px;
+        }
+        .canvas-wrapper {
+            position: relative;
+            max-width: 100%;
+            max-height: calc(100vh - 300px);
+            overflow: auto;
+            border-radius: 8px;
+            background: repeating-conic-gradient(#808080 0% 25%, transparent 0% 50%) 50% / 20px 20px;
+        }
+        #canvas {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            cursor: move;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .canvas-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn-success {
+            background: #10b981;
+            color: white;
+        }
+        .btn-success:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background: rgba(30, 41, 59, 0.8);
+            color: #f1f5f9;
+            border: 2px solid #334155;
+        }
+        .btn-danger {
+            background: #ef4444;
+            color: white;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #cbd5e1;
+        }
+        .empty-state-icon { font-size: 4rem; margin-bottom: 20px; opacity: 0.5; }
+        .info-box {
+            background: rgba(99, 102, 241, 0.1);
+            border-left: 4px solid #6366f1;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+        .select-input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #334155;
+            border-radius: 8px;
+            background: rgba(30, 41, 59, 0.5);
+            color: #f1f5f9;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <header class="header">
-            <h1>📸 Photo Text Editor Pro</h1>
-            <p>Professional Behind-Text Effect - Text Goes Behind Photo Subjects</p>
+            <h1>🎨 Behind Text Effect</h1>
+            <p>Create professional depth effects - Text goes behind photo subjects</p>
         </header>
         <div class="main-grid">
             <aside class="sidebar">
@@ -18,684 +201,353 @@
                     <h3 class="section-title">📤 Upload Photo</h3>
                     <div class="upload-area" id="uploadArea">
                         <div class="upload-icon">🖼️</div>
-                        <div class="upload-text">Click or drag image here</div>
-                        <div class="upload-hint">Supports JPG, PNG, WebP</div>
+                        <div>Click or drag image here</div>
                     </div>
                     <input type="file" id="fileInput" accept="image/*">
                 </div>
+                
                 <div class="section">
                     <h3 class="section-title">✍️ Text Content</h3>
-                    <textarea class="text-input" id="textInput" placeholder="Enter your text here...">VIETNAM</textarea>
+                    <textarea class="text-input" id="textInput" placeholder="Enter text...">VIETNAM</textarea>
                 </div>
+
                 <div class="section">
-                    <h3 class="section-title">🎭 Behind Text Effect<span class="feature-badge">PRO</span></h3>
-                    <div class="toggle-group">
-                        <button class="toggle-btn active" id="behindToggle">✅ Enabled</button>
-                        <button class="toggle-btn" id="normalToggle">Standard</button>
-                    </div>
+                    <h3 class="section-title">🎭 Behind Effect Settings</h3>
                     <div class="info-box">
-                        💡 <strong>How it works:</strong> Text appears behind people/objects in your photo. Works best with clear subjects in foreground!
+                        💡 Adjust threshold to control what appears in front of text. Lower = more in front.
                     </div>
+                    
                     <div class="control-group" style="margin-top:15px">
-                        <label class="control-label">Brightness Threshold (Adjust for best mask)</label>
+                        <label class="control-label">Brightness Threshold (What goes in front)</label>
                         <div class="slider-container">
-                            <input type="range" class="slider" id="thresholdSlider" min="50" max="200" value="128">
-                            <span class="slider-value" id="thresholdValue">128</span>
+                            <input type="range" class="slider" id="threshold" min="30" max="200" value="100">
+                            <span class="slider-value" id="thresholdVal">100</span>
                         </div>
                     </div>
+
                     <div class="control-group">
-                        <label class="control-label">Edge Smoothness</label>
+                        <label class="control-label">Edge Blur (Smoothness)</label>
                         <div class="slider-container">
-                            <input type="range" class="slider" id="smoothSlider" min="0" max="10" value="3">
-                            <span class="slider-value" id="smoothValue">3px</span>
+                            <input type="range" class="slider" id="blur" min="0" max="20" value="5">
+                            <span class="slider-value" id="blurVal">5px</span>
                         </div>
                     </div>
+
                     <div class="control-group">
-                        <label class="control-label">Text Opacity Behind</label>
+                        <label class="control-label">Text Opacity</label>
                         <div class="slider-container">
-                            <input type="range" class="slider" id="opacitySlider" min="0" max="100" value="70">
-                            <span class="slider-value" id="opacityValue">70%</span>
+                            <input type="range" class="slider" id="opacity" min="10" max="100" value="85">
+                            <span class="slider-value" id="opacityVal">85%</span>
                         </div>
                     </div>
                 </div>
+
                 <div class="section">
-                    <h3 class="section-title">🎨 Popular Styles<span class="feature-badge">20+ FREE</span></h3>
-                    <div class="styles-grid">
-                        <button class="style-btn" data-style="clean">⚪ Clean White</button>
-                        <button class="style-btn" data-style="bold">💪 Bold</button>
-                        <button class="style-btn" data-style="neon">🌟 Neon</button>
-                        <button class="style-btn" data-style="3d">📦 3D</button>
-                        <button class="style-btn" data-style="gradient">🌈 Gradient</button>
-                        <button class="style-btn" data-style="outline">⭕ Outline</button>
-                        <button class="style-btn" data-style="shadow">🌑 Shadow</button>
-                        <button class="style-btn" data-style="retro">🕹️ Retro</button>
-                        <button class="style-btn" data-style="glitch">⚡ Glitch</button>
-                        <button class="style-btn" data-style="gold">👑 Gold</button>
-                        <button class="style-btn" data-style="fire">🔥 Fire</button>
-                        <button class="style-btn" data-style="ice">❄️ Ice</button>
-                    </div>
-                </div>
-                <div class="section">
-                    <h3 class="section-title">⚙️ Text Settings</h3>
+                    <h3 class="section-title">⚙️ Text Style</h3>
+                    
                     <div class="control-group">
                         <label class="control-label">Font Size</label>
                         <div class="slider-container">
-                            <input type="range" class="slider" id="fontSizeSlider" min="30" max="400" value="120">
-                            <span class="slider-value" id="fontSizeValue">120px</span>
+                            <input type="range" class="slider" id="fontSize" min="40" max="400" value="150">
+                            <span class="slider-value" id="fontSizeVal">150px</span>
                         </div>
                     </div>
+
                     <div class="control-group">
                         <label class="control-label">Font Family</label>
                         <select class="select-input" id="fontFamily">
-                            <option value="Impact">Impact</option>
+                            <option value="Impact">Impact (Bold)</option>
                             <option value="Arial Black">Arial Black</option>
                             <option value="Helvetica">Helvetica</option>
                             <option value="Georgia">Georgia</option>
-                            <option value="Times New Roman">Times New Roman</option>
-                            <option value="Courier New">Courier New</option>
-                            <option value="Verdana">Verdana</option>
                         </select>
                     </div>
+
                     <div class="control-group">
                         <label class="control-label">Text Color</label>
-                        <input type="color" class="color-input" id="textColor" value="#ffffff">
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">Stroke Width</label>
-                        <div class="slider-container">
-                            <input type="range" class="slider" id="strokeSlider" min="0" max="20" value="0">
-                            <span class="slider-value" id="strokeValue">0px</span>
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">Stroke Color</label>
-                        <input type="color" class="color-input" id="strokeColor" value="#000000">
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">Text Position</label>
-                        <div class="position-controls">
-                            <button class="pos-btn" data-pos="top-left">↖️ TL</button>
-                            <button class="pos-btn" data-pos="top-center">⬆️ TC</button>
-                            <button class="pos-btn" data-pos="top-right">↗️ TR</button>
-                            <button class="pos-btn" data-pos="middle-left">⬅️ ML</button>
-                            <button class="pos-btn active" data-pos="middle-center">⭕ Center</button>
-                            <button class="pos-btn" data-pos="middle-right">➡️ MR</button>
-                            <button class="pos-btn" data-pos="bottom-left">↙️ BL</button>
-                            <button class="pos-btn" data-pos="bottom-center">⬇️ BC</button>
-                            <button class="pos-btn" data-pos="bottom-right">↘️ BR</button>
-                        </div>
+                        <input type="color" class="select-input" id="textColor" value="#f0e6d2" style="height:45px">
                     </div>
                 </div>
             </aside>
+
             <main class="canvas-container">
                 <div id="canvasArea" class="canvas-wrapper" style="display:none">
                     <canvas id="canvas"></canvas>
                 </div>
                 <div id="emptyState" class="empty-state">
                     <div class="empty-state-icon">🎨</div>
-                    <div class="empty-state-text">Upload a photo to get started</div>
-                    <div class="empty-state-hint">Create amazing behind-text effects like professional designers!</div>
+                    <div style="font-size:1.2rem;margin-bottom:10px">Upload a photo to start</div>
+                    <div style="font-size:0.9rem;opacity:0.7">Create amazing behind-text effects!</div>
                 </div>
-                <div class="canvas-controls" id="canvasControls" style="display:none">
-                    <button class="btn btn-success" id="downloadBtn">💾 Download Image</button>
-                    <button class="btn btn-secondary" id="resetBtn">🔄 Reset</button>
-                    <button class="btn btn-danger" id="clearBtn">🗑️ Clear Photo</button>
+                <div class="canvas-controls" id="controls" style="display:none">
+                    <button class="btn btn-success" id="download">💾 Download</button>
+                    <button class="btn btn-secondary" id="reset">🔄 Reset</button>
+                    <button class="btn btn-danger" id="clear">🗑️ Clear</button>
                 </div>
             </main>
         </div>
     </div>
+
     <script>
-class PhotoTextEditor {
-    constructor() {
-        this.canvas = document.getElementById('canvas');
-        this.ctx = this.canvas.getContext('2d', { willReadFrequently: true });
-        this.image = null;
-        this.text = 'VIETNAM';
-        this.fontSize = 120;
-        this.fontFamily = 'Impact';
-        this.textColor = '#ffffff';
-        this.strokeWidth = 0;
-        this.strokeColor = '#000000';
-        this.position = 'middle-center';
-        this.behindEffect = true;
-        this.threshold = 128;
-        this.smoothness = 3;
-        this.textOpacity = 0.7;
-        this.currentStyle = null;
-        this.textX = 0;
-        this.textY = 0;
-        this.isDragging = false;
-        this.init();
-    }
-
-    init() {
-        this.setupEventListeners();
-        this.loadDefaultStyles();
-    }
-
-    setupEventListeners() {
-        const fileInput = document.getElementById('fileInput');
-        const uploadArea = document.getElementById('uploadArea');
-
-        uploadArea.addEventListener('click', () => fileInput.click());
-        uploadArea.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            uploadArea.classList.add('dragover');
-        });
-        uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
-        uploadArea.addEventListener('drop', (e) => {
-            e.preventDefault();
-            uploadArea.classList.remove('dragover');
-            const file = e.dataTransfer.files[0];
-            if (file && file.type.startsWith('image/')) this.loadImage(file);
-        });
-
-        fileInput.addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if (file) this.loadImage(file);
-        });
-
-        document.getElementById('textInput').addEventListener('input', (e) => {
-            this.text = e.target.value || 'TEXT';
-            this.render();
-        });
-
-        document.getElementById('fontSizeSlider').addEventListener('input', (e) => {
-            this.fontSize = parseInt(e.target.value);
-            document.getElementById('fontSizeValue').textContent = this.fontSize + 'px';
-            this.render();
-        });
-
-        document.getElementById('fontFamily').addEventListener('change', (e) => {
-            this.fontFamily = e.target.value;
-            this.render();
-        });
-
-        document.getElementById('textColor').addEventListener('input', (e) => {
-            this.textColor = e.target.value;
-            this.render();
-        });
-
-        document.getElementById('strokeSlider').addEventListener('input', (e) => {
-            this.strokeWidth = parseInt(e.target.value);
-            document.getElementById('strokeValue').textContent = this.strokeWidth + 'px';
-            this.render();
-        });
-
-        document.getElementById('strokeColor').addEventListener('input', (e) => {
-            this.strokeColor = e.target.value;
-            this.render();
-        });
-
-        document.getElementById('thresholdSlider').addEventListener('input', (e) => {
-            this.threshold = parseInt(e.target.value);
-            document.getElementById('thresholdValue').textContent = this.threshold;
-            this.render();
-        });
-
-        document.getElementById('smoothSlider').addEventListener('input', (e) => {
-            this.smoothness = parseInt(e.target.value);
-            document.getElementById('smoothValue').textContent = this.smoothness + 'px';
-            this.render();
-        });
-
-        document.getElementById('opacitySlider').addEventListener('input', (e) => {
-            this.textOpacity = parseInt(e.target.value) / 100;
-            document.getElementById('opacityValue').textContent = e.target.value + '%';
-            this.render();
-        });
-
-        document.getElementById('behindToggle').addEventListener('click', () => {
-            this.behindEffect = true;
-            document.getElementById('behindToggle').classList.add('active');
-            document.getElementById('normalToggle').classList.remove('active');
-            this.render();
-        });
-
-        document.getElementById('normalToggle').addEventListener('click', () => {
-            this.behindEffect = false;
-            document.getElementById('normalToggle').classList.add('active');
-            document.getElementById('behindToggle').classList.remove('active');
-            this.render();
-        });
-
-        document.querySelectorAll('.pos-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.pos-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                this.position = btn.dataset.pos;
-                this.updateTextPosition();
-                this.render();
-            });
-        });
-
-        document.querySelectorAll('.style-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                this.applyStyle(btn.dataset.style);
-            });
-        });
-
-        document.getElementById('downloadBtn').addEventListener('click', () => this.download());
-        document.getElementById('resetBtn').addEventListener('click', () => this.reset());
-        document.getElementById('clearBtn').addEventListener('click', () => this.clear());
-
-        this.canvas.addEventListener('mousedown', (e) => this.startDrag(e));
-        this.canvas.addEventListener('mousemove', (e) => this.drag(e));
-        this.canvas.addEventListener('mouseup', () => this.endDrag());
-        this.canvas.addEventListener('mouseleave', () => this.endDrag());
-    }
-
-    loadImage(file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            const img = new Image();
-            img.onload = () => {
-                this.image = img;
-                this.canvas.width = img.width;
-                this.canvas.height = img.height;
-                this.updateTextPosition();
-                document.getElementById('emptyState').style.display = 'none';
-                document.getElementById('canvasArea').style.display = 'block';
-                document.getElementById('canvasControls').style.display = 'flex';
-                this.render();
-            };
-            img.src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-    }
-
-    updateTextPosition() {
-        if (!this.image) return;
-        const padding = 50;
-        const positions = {
-            'top-left': { x: padding, y: this.fontSize + padding },
-            'top-center': { x: this.canvas.width / 2, y: this.fontSize + padding },
-            'top-right': { x: this.canvas.width - padding, y: this.fontSize + padding },
-            'middle-left': { x: padding, y: this.canvas.height / 2 },
-            'middle-center': { x: this.canvas.width / 2, y: this.canvas.height / 2 },
-            'middle-right': { x: this.canvas.width - padding, y: this.canvas.height / 2 },
-            'bottom-left': { x: padding, y: this.canvas.height - padding },
-            'bottom-center': { x: this.canvas.width / 2, y: this.canvas.height - padding },
-            'bottom-right': { x: this.canvas.width - padding, y: this.canvas.height - padding }
-        };
-        const pos = positions[this.position];
-        this.textX = pos.x;
-        this.textY = pos.y;
-    }
-
-    startDrag(e) {
-        const rect = this.canvas.getBoundingClientRect();
-        const x = (e.clientX - rect.left) * (this.canvas.width / rect.width);
-        const y = (e.clientY - rect.top) * (this.canvas.height / rect.height);
-        this.ctx.font = `${this.fontSize}px ${this.fontFamily}`;
-        const metrics = this.ctx.measureText(this.text);
-        const textWidth = metrics.width;
-        const textHeight = this.fontSize;
-        if (x >= this.textX - textWidth / 2 && x <= this.textX + textWidth / 2 &&
-            y >= this.textY - textHeight / 2 && y <= this.textY + textHeight / 2) {
-            this.isDragging = true;
-            this.dragStartX = x - this.textX;
-            this.dragStartY = y - this.textY;
-        }
-    }
-
-    drag(e) {
-        if (!this.isDragging) return;
-        const rect = this.canvas.getBoundingClientRect();
-        const x = (e.clientX - rect.left) * (this.canvas.width / rect.width);
-        const y = (e.clientY - rect.top) * (this.canvas.height / rect.height);
-        this.textX = x - this.dragStartX;
-        this.textY = y - this.dragStartY;
-        this.render();
-    }
-
-    endDrag() {
-        this.isDragging = false;
-    }
-
-    render() {
-        if (!this.image) return;
-
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-
-        if (this.behindEffect) {
-            this.renderBehindEffect();
-        } else {
-            this.ctx.drawImage(this.image, 0, 0);
-            this.drawText();
-        }
-    }
-
-    renderBehindEffect() {
-        // Step 1: Draw original image
-        this.ctx.drawImage(this.image, 0, 0);
-
-        // Step 2: Create text mask
-        const textCanvas = document.createElement('canvas');
-        textCanvas.width = this.canvas.width;
-        textCanvas.height = this.canvas.height;
-        const textCtx = textCanvas.getContext('2d');
-        
-        textCtx.font = `${this.fontSize}px ${this.fontFamily}`;
-        textCtx.textAlign = 'center';
-        textCtx.textBaseline = 'middle';
-        textCtx.fillStyle = '#ffffff';
-        textCtx.fillText(this.text, this.textX, this.textY);
-
-        // Step 3: Get image data for brightness detection
-        const imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
-        const textData = textCtx.getImageData(0, 0, this.canvas.width, this.canvas.height);
-        
-        // Step 4: Create mask based on brightness
-        const maskCanvas = document.createElement('canvas');
-        maskCanvas.width = this.canvas.width;
-        maskCanvas.height = this.canvas.height;
-        const maskCtx = maskCanvas.getContext('2d');
-        const maskData = maskCtx.createImageData(this.canvas.width, this.canvas.height);
-
-        for (let i = 0; i < imageData.data.length; i += 4) {
-            const r = imageData.data[i];
-            const g = imageData.data[i + 1];
-            const b = imageData.data[i + 2];
-            const brightness = (r + g + b) / 3;
-            
-            // If text exists at this pixel
-            if (textData.data[i + 3] > 0) {
-                // Bright areas (foreground subjects) = opaque mask
-                // Dark areas (background) = transparent mask
-                if (brightness > this.threshold) {
-                    maskData.data[i + 3] = 255; // Opaque - will show original image
-                } else {
-                    maskData.data[i + 3] = 0; // Transparent - will show text
-                }
+        class BehindTextEditor {
+            constructor() {
+                this.canvas = document.getElementById('canvas');
+                this.ctx = this.canvas.getContext('2d', { willReadFrequently: true });
+                this.image = null;
+                this.settings = {
+                    text: 'VIETNAM',
+                    fontSize: 150,
+                    fontFamily: 'Impact',
+                    textColor: '#f0e6d2',
+                    threshold: 100,
+                    blur: 5,
+                    opacity: 0.85,
+                    x: 0,
+                    y: 0
+                };
+                this.init();
             }
-        }
 
-        maskCtx.putImageData(maskData, 0, 0);
+            init() {
+                // File upload
+                const fileInput = document.getElementById('fileInput');
+                const uploadArea = document.getElementById('uploadArea');
+                
+                uploadArea.onclick = () => fileInput.click();
+                uploadArea.ondragover = (e) => { e.preventDefault(); uploadArea.style.borderColor = '#6366f1'; };
+                uploadArea.ondragleave = () => { uploadArea.style.borderColor = '#334155'; };
+                uploadArea.ondrop = (e) => {
+                    e.preventDefault();
+                    uploadArea.style.borderColor = '#334155';
+                    const file = e.dataTransfer.files[0];
+                    if (file && file.type.startsWith('image/')) this.loadImage(file);
+                };
+                
+                fileInput.onchange = (e) => {
+                    const file = e.target.files[0];
+                    if (file) this.loadImage(file);
+                };
 
-        // Apply smoothness/blur to mask edges
-        if (this.smoothness > 0) {
-            maskCtx.filter = `blur(${this.smoothness}px)`;
-            maskCtx.drawImage(maskCanvas, 0, 0);
-            maskCtx.filter = 'none';
-        }
+                // Controls
+                document.getElementById('textInput').oninput = (e) => {
+                    this.settings.text = e.target.value || 'TEXT';
+                    this.render();
+                };
 
-        // Step 5: Draw text with reduced opacity
-        this.ctx.save();
-        this.ctx.globalAlpha = this.textOpacity;
-        this.drawText();
-        this.ctx.restore();
+                document.getElementById('threshold').oninput = (e) => {
+                    this.settings.threshold = parseInt(e.target.value);
+                    document.getElementById('thresholdVal').textContent = e.target.value;
+                    this.render();
+                };
 
-        // Step 6: Draw original image masked by brightness
-        this.ctx.save();
-        this.ctx.globalCompositeOperation = 'destination-over';
-        this.ctx.drawImage(this.image, 0, 0);
-        this.ctx.restore();
+                document.getElementById('blur').oninput = (e) => {
+                    this.settings.blur = parseInt(e.target.value);
+                    document.getElementById('blurVal').textContent = e.target.value + 'px';
+                    this.render();
+                };
 
-        // Step 7: Apply the mask to show foreground over text
-        this.ctx.save();
-        this.ctx.globalCompositeOperation = 'destination-in';
-        this.ctx.drawImage(maskCanvas, 0, 0);
-        this.ctx.restore();
+                document.getElementById('opacity').oninput = (e) => {
+                    this.settings.opacity = parseInt(e.target.value) / 100;
+                    document.getElementById('opacityVal').textContent = e.target.value + '%';
+                    this.render();
+                };
 
-        // Step 8: Composite everything
-        const finalCanvas = document.createElement('canvas');
-        finalCanvas.width = this.canvas.width;
-        finalCanvas.height = this.canvas.height;
-        const finalCtx = finalCanvas.getContext('2d');
-        
-        finalCtx.drawImage(this.image, 0, 0);
-        finalCtx.save();
-        finalCtx.globalAlpha = this.textOpacity;
-        finalCtx.font = `${this.fontSize}px ${this.fontFamily}`;
-        finalCtx.textAlign = 'center';
-        finalCtx.textBaseline = 'middle';
-        
-        if (this.currentStyle) {
-            this.applyCurrentStyle(finalCtx);
-        } else {
-            if (this.strokeWidth > 0) {
-                finalCtx.strokeStyle = this.strokeColor;
-                finalCtx.lineWidth = this.strokeWidth;
-                finalCtx.strokeText(this.text, this.textX, this.textY);
+                document.getElementById('fontSize').oninput = (e) => {
+                    this.settings.fontSize = parseInt(e.target.value);
+                    document.getElementById('fontSizeVal').textContent = e.target.value + 'px';
+                    this.render();
+                };
+
+                document.getElementById('fontFamily').onchange = (e) => {
+                    this.settings.fontFamily = e.target.value;
+                    this.render();
+                };
+
+                document.getElementById('textColor').oninput = (e) => {
+                    this.settings.textColor = e.target.value;
+                    this.render();
+                };
+
+                document.getElementById('download').onclick = () => this.download();
+                document.getElementById('reset').onclick = () => this.reset();
+                document.getElementById('clear').onclick = () => this.clear();
+
+                // Drag text
+                let dragging = false;
+                let startX, startY;
+
+                this.canvas.onmousedown = (e) => {
+                    dragging = true;
+                    const rect = this.canvas.getBoundingClientRect();
+                    startX = e.clientX - rect.left - this.settings.x;
+                    startY = e.clientY - rect.top - this.settings.y;
+                };
+
+                this.canvas.onmousemove = (e) => {
+                    if (!dragging) return;
+                    const rect = this.canvas.getBoundingClientRect();
+                    this.settings.x = e.clientX - rect.left - startX;
+                    this.settings.y = e.clientY - rect.top - startY;
+                    this.render();
+                };
+
+                this.canvas.onmouseup = () => dragging = false;
+                this.canvas.onmouseleave = () => dragging = false;
             }
-            finalCtx.fillStyle = this.textColor;
-            finalCtx.fillText(this.text, this.textX, this.textY);
-        }
-        finalCtx.restore();
-        
-        finalCtx.globalCompositeOperation = 'destination-over';
-        finalCtx.drawImage(this.canvas, 0, 0);
 
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.drawImage(finalCanvas, 0, 0);
-    }
-
-    drawText() {
-        this.ctx.font = `${this.fontSize}px ${this.fontFamily}`;
-        this.ctx.textAlign = 'center';
-        this.ctx.textBaseline = 'middle';
-
-        if (this.currentStyle) {
-            this.applyCurrentStyle(this.ctx);
-        } else {
-            if (this.strokeWidth > 0) {
-                this.ctx.strokeStyle = this.strokeColor;
-                this.ctx.lineWidth = this.strokeWidth;
-                this.ctx.strokeText(this.text, this.textX, this.textY);
+            loadImage(file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        this.image = img;
+                        this.canvas.width = img.width;
+                        this.canvas.height = img.height;
+                        this.settings.x = img.width / 2;
+                        this.settings.y = img.height / 2;
+                        
+                        document.getElementById('emptyState').style.display = 'none';
+                        document.getElementById('canvasArea').style.display = 'block';
+                        document.getElementById('controls').style.display = 'flex';
+                        
+                        this.render();
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
             }
-            this.ctx.fillStyle = this.textColor;
-            this.ctx.fillText(this.text, this.textX, this.textY);
-        }
-    }
 
-    loadDefaultStyles() {
-        this.styles = {
-            clean: {
-                apply: (ctx) => {
-                    ctx.fillStyle = '#ffffff';
-                    ctx.fillText(this.text, this.textX, this.textY);
-                }
-            },
-            bold: {
-                apply: (ctx) => {
-                    ctx.strokeStyle = '#000000';
-                    ctx.lineWidth = 12;
-                    ctx.strokeText(this.text, this.textX, this.textY);
-                    ctx.fillStyle = '#ffffff';
-                    ctx.fillText(this.text, this.textX, this.textY);
-                }
-            },
-            neon: {
-                apply: (ctx) => {
-                    ctx.shadowColor = '#00ffff';
-                    ctx.shadowBlur = 20;
-                    ctx.strokeStyle = '#00ffff';
-                    ctx.lineWidth = 3;
-                    ctx.strokeText(this.text, this.textX, this.textY);
-                    ctx.fillStyle = '#ffffff';
-                    ctx.fillText(this.text, this.textX, this.textY);
-                    ctx.shadowBlur = 0;
-                }
-            },
-            '3d': {
-                apply: (ctx) => {
-                    for (let i = 5; i > 0; i--) {
-                        ctx.fillStyle = `rgba(0,0,0,${0.3 - i * 0.05})`;
-                        ctx.fillText(this.text, this.textX + i * 2, this.textY + i * 2);
-                    }
-                    ctx.strokeStyle = '#000000';
-                    ctx.lineWidth = 3;
-                    ctx.strokeText(this.text, this.textX, this.textY);
-                    const gradient = ctx.createLinearGradient(this.textX, this.textY - this.fontSize / 2, this.textX, this.textY + this.fontSize / 2);
-                    gradient.addColorStop(0, '#ffffff');
-                    gradient.addColorStop(1, '#cccccc');
-                    ctx.fillStyle = gradient;
-                    ctx.fillText(this.text, this.textX, this.textY);
-                }
-            },
-            gradient: {
-                apply: (ctx) => {
-                    const gradient = ctx.createLinearGradient(this.textX - 100, this.textY, this.textX + 100, this.textY);
-                    gradient.addColorStop(0, '#ff00ff');
-                    gradient.addColorStop(0.5, '#00ffff');
-                    gradient.addColorStop(1, '#ffff00');
-                    ctx.strokeStyle = '#000000';
-                    ctx.lineWidth = 4;
-                    ctx.strokeText(this.text, this.textX, this.textY);
-                    ctx.fillStyle = gradient;
-                    ctx.fillText(this.text, this.textX, this.textY);
-                }
-            },
-            outline: {
-                apply: (ctx) => {
-                    ctx.strokeStyle = '#000000';
-                    ctx.lineWidth = 8;
-                    ctx.strokeText(this.text, this.textX, this.textY);
-                    ctx.fillStyle = '#ffffff';
-                    ctx.fillText(this.text, this.textX, this.textY);
-                }
-            },
-            shadow: {
-                apply: (ctx) => {
-                    ctx.shadowColor = 'rgba(0,0,0,0.8)';
-                    ctx.shadowBlur = 15;
-                    ctx.shadowOffsetX = 5;
-                    ctx.shadowOffsetY = 5;
-                    ctx.fillStyle = '#ffffff';
-                    ctx.fillText(this.text, this.textX, this.textY);
-                    ctx.shadowBlur = 0;
-                    ctx.shadowOffsetX = 0;
-                    ctx.shadowOffsetY = 0;
-                }
-            },
-            retro: {
-                apply: (ctx) => {
-                    const colors = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#a8e6cf'];
-                    for (let i = colors.length - 1; i >= 0; i--) {
-                        ctx.fillStyle = colors[i];
-                        ctx.fillText(this.text, this.textX + i * 3, this.textY + i * 3);
+            render() {
+                if (!this.image) return;
+
+                const { text, fontSize, fontFamily, textColor, threshold, blur, opacity, x, y } = this.settings;
+
+                // Clear canvas
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                // Step 1: Draw original image to get pixel data
+                this.ctx.drawImage(this.image, 0, 0);
+                const imageData = this.ctx.getImageData(0, 0, this.canvas.width, this.canvas.height);
+
+                // Step 2: Create text layer
+                const textCanvas = document.createElement('canvas');
+                textCanvas.width = this.canvas.width;
+                textCanvas.height = this.canvas.height;
+                const textCtx = textCanvas.getContext('2d');
+                
+                textCtx.font = `900 ${fontSize}px ${fontFamily}`;
+                textCtx.textAlign = 'center';
+                textCtx.textBaseline = 'middle';
+                textCtx.fillStyle = textColor;
+                textCtx.globalAlpha = opacity;
+                textCtx.fillText(text, x, y);
+
+                // Step 3: Create mask based on brightness
+                const maskCanvas = document.createElement('canvas');
+                maskCanvas.width = this.canvas.width;
+                maskCanvas.height = this.canvas.height;
+                const maskCtx = maskCanvas.getContext('2d');
+                const maskData = maskCtx.createImageData(this.canvas.width, this.canvas.height);
+
+                // Analyze brightness and create mask
+                for (let i = 0; i < imageData.data.length; i += 4) {
+                    const r = imageData.data[i];
+                    const g = imageData.data[i + 1];
+                    const b = imageData.data[i + 2];
+                    
+                    // Calculate brightness
+                    const brightness = (r + g + b) / 3;
+                    
+                    // If brightness is above threshold, this pixel should be in front
+                    if (brightness > threshold) {
+                        maskData.data[i] = 255;     // R
+                        maskData.data[i + 1] = 255; // G
+                        maskData.data[i + 2] = 255; // B
+                        maskData.data[i + 3] = 255; // A (opaque)
+                    } else {
+                        maskData.data[i + 3] = 0;   // Transparent
                     }
                 }
-            },
-            glitch: {
-                apply: (ctx) => {
-                    ctx.fillStyle = '#ff0000';
-                    ctx.fillText(this.text, this.textX - 3, this.textY);
-                    ctx.fillStyle = '#00ff00';
-                    ctx.fillText(this.text, this.textX + 3, this.textY);
-                    ctx.fillStyle = '#0000ff';
-                    ctx.fillText(this.text, this.textX, this.textY + 2);
+
+                maskCtx.putImageData(maskData, 0, 0);
+
+                // Apply blur to mask for smooth edges
+                if (blur > 0) {
+                    maskCtx.filter = `blur(${blur}px)`;
+                    maskCtx.drawImage(maskCanvas, 0, 0);
+                    maskCtx.filter = 'none';
                 }
-            },
-            gold: {
-                apply: (ctx) => {
-                    const gradient = ctx.createLinearGradient(this.textX, this.textY - this.fontSize / 2, this.textX, this.textY + this.fontSize / 2);
-                    gradient.addColorStop(0, '#ffd700');
-                    gradient.addColorStop(0.5, '#ffed4e');
-                    gradient.addColorStop(1, '#ff8c00');
-                    ctx.strokeStyle = '#8b4513';
-                    ctx.lineWidth = 5;
-                    ctx.strokeText(this.text, this.textX, this.textY);
-                    ctx.fillStyle = gradient;
-                    ctx.fillText(this.text, this.textX, this.textY);
-                }
-            },
-            fire: {
-                apply: (ctx) => {
-                    const gradient = ctx.createLinearGradient(this.textX, this.textY - this.fontSize / 2, this.textX, this.textY + this.fontSize / 2);
-                    gradient.addColorStop(0, '#ffff00');
-                    gradient.addColorStop(0.5, '#ff6600');
-                    gradient.addColorStop(1, '#ff0000');
-                    ctx.shadowColor = '#ff6600';
-                    ctx.shadowBlur = 20;
-                    ctx.fillStyle = gradient;
-                    ctx.fillText(this.text, this.textX, this.textY);
-                    ctx.shadowBlur = 0;
-                }
-            },
-            ice: {
-                apply: (ctx) => {
-                    const gradient = ctx.createLinearGradient(this.textX, this.textY - this.fontSize / 2, this.textX, this.textY + this.fontSize / 2);
-                    gradient.addColorStop(0, '#e0ffff');
-                    gradient.addColorStop(0.5, '#87ceeb');
-                    gradient.addColorStop(1, '#4682b4');
-                    ctx.shadowColor = '#00bfff';
-                    ctx.shadowBlur = 15;
-                    ctx.strokeStyle = '#ffffff';
-                    ctx.lineWidth = 3;
-                    ctx.strokeText(this.text, this.textX, this.textY);
-                    ctx.fillStyle = gradient;
-                    ctx.fillText(this.text, this.textX, this.textY);
-                    ctx.shadowBlur = 0;
-                }
+
+                // Step 4: Composite the layers
+                // First, draw the original image
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.ctx.drawImage(this.image, 0, 0);
+
+                // Draw text layer
+                this.ctx.drawImage(textCanvas, 0, 0);
+
+                // Create foreground layer (parts that should be in front)
+                const foregroundCanvas = document.createElement('canvas');
+                foregroundCanvas.width = this.canvas.width;
+                foregroundCanvas.height = this.canvas.height;
+                const fgCtx = foregroundCanvas.getContext('2d');
+                
+                // Draw original image
+                fgCtx.drawImage(this.image, 0, 0);
+                
+                // Apply mask to show only bright areas
+                fgCtx.globalCompositeOperation = 'destination-in';
+                fgCtx.drawImage(maskCanvas, 0, 0);
+
+                // Draw foreground on top
+                this.ctx.drawImage(foregroundCanvas, 0, 0);
             }
-        };
-    }
 
-    applyStyle(styleName) {
-        this.currentStyle = styleName;
-        this.render();
-    }
+            download() {
+                const link = document.createElement('a');
+                link.download = `behind-text-${Date.now()}.png`;
+                link.href = this.canvas.toDataURL('image/png');
+                link.click();
+            }
 
-    applyCurrentStyle(ctx) {
-        if (this.currentStyle && this.styles[this.currentStyle]) {
-            this.styles[this.currentStyle].apply(ctx);
+            reset() {
+                this.settings = {
+                    text: 'VIETNAM',
+                    fontSize: 150,
+                    fontFamily: 'Impact',
+                    textColor: '#f0e6d2',
+                    threshold: 100,
+                    blur: 5,
+                    opacity: 0.85,
+                    x: this.canvas.width / 2,
+                    y: this.canvas.height / 2
+                };
+                
+                document.getElementById('textInput').value = 'VIETNAM';
+                document.getElementById('threshold').value = 100;
+                document.getElementById('thresholdVal').textContent = '100';
+                document.getElementById('blur').value = 5;
+                document.getElementById('blurVal').textContent = '5px';
+                document.getElementById('opacity').value = 85;
+                document.getElementById('opacityVal').textContent = '85%';
+                document.getElementById('fontSize').value = 150;
+                document.getElementById('fontSizeVal').textContent = '150px';
+                document.getElementById('fontFamily').value = 'Impact';
+                document.getElementById('textColor').value = '#f0e6d2';
+                
+                this.render();
+            }
+
+            clear() {
+                this.image = null;
+                document.getElementById('emptyState').style.display = 'block';
+                document.getElementById('canvasArea').style.display = 'none';
+                document.getElementById('controls').style.display = 'none';
+                document.getElementById('fileInput').value = '';
+            }
         }
-    }
 
-    download() {
-        const link = document.createElement('a');
-        link.download = `photo-text-${Date.now()}.png`;
-        link.href = this.canvas.toDataURL('image/png');
-        link.click();
-    }
-
-    reset() {
-        this.text = 'VIETNAM';
-        this.fontSize = 120;
-        this.fontFamily = 'Impact';
-        this.textColor = '#ffffff';
-        this.strokeWidth = 0;
-        this.strokeColor = '#000000';
-        this.behindEffect = true;
-        this.threshold = 128;
-        this.smoothness = 3;
-        this.textOpacity = 0.7;
-        this.currentStyle = null;
-        document.getElementById('textInput').value = 'VIETNAM';
-        document.getElementById('fontSizeSlider').value = 120;
-        document.getElementById('fontSizeValue').textContent = '120px';
-        document.getElementById('fontFamily').value = 'Impact';
-        document.getElementById('textColor').value = '#ffffff';
-        document.getElementById('strokeSlider').value = 0;
-        document.getElementById('strokeValue').textContent = '0px';
-        document.getElementById('strokeColor').value = '#000000';
-        document.getElementById('thresholdSlider').value = 128;
-        document.getElementById('thresholdValue').textContent = '128';
-        document.getElementById('smoothSlider').value = 3;
-        document.getElementById('smoothValue').textContent = '3px';
-        document.getElementById('opacitySlider').value = 70;
-        document.getElementById('opacityValue').textContent = '70%';
-        document.querySelectorAll('.style-btn').forEach(b => b.classList.remove('active'));
-        this.updateTextPosition();
-        this.render();
-    }
-
-    clear() {
-        this.image = null;
-        this.currentStyle = null;
-        document.getElementById('emptyState').style.display = 'block';
-        document.getElementById('canvasArea').style.display = 'none';
-        document.getElementById('canvasControls').style.display = 'none';
-        document.getElementById('fileInput').value = '';
-        this.reset();
-    }
-}
-
-const editor = new PhotoTextEditor();
+        new BehindTextEditor();
     </script>
 </body>
 </html>
